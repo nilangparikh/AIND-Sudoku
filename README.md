@@ -3,11 +3,11 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+A: To solve the Naked Twins problem, we use constrait propagation to repeatly find twins and determine the digit for each box until the puzzle is solved.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: To solve the Diagonal Sudoku problem, we add 2 additional constraints (1 for each diagonal) and repeatly solve for each box until the puzzle is solved.
 
 ### Install
 
