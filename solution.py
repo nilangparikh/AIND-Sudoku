@@ -53,7 +53,7 @@ def naked_twins(values):
         for pair in twins:
             box1 = pair[0]
             box2 = pair[1]
-            # Determine if values[box1] and values[box2] are twins: if yes, then continue checking peers
+            # Determine if box1 and box2 are twins: if yes, then continue checking peers
             # and removing the digits from peers; otherwise return values.
             if values[box1] == values[box2]:
                 for box in unit:
