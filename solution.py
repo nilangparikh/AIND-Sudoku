@@ -98,6 +98,13 @@ def display(values):
     return
 
 def eliminate(values):
+    """
+    Look at peers and determine if we can eliminate possible values in a box.
+    Args:
+       values(dict): The sudoku in dictionary form
+    Returns:
+        The dictionary representation of the final sudoku grid.
+    """
     solved_values = [box for box in values.keys() if len(values[box]) == 1]
     for box in solved_values:
         digit = values[box]
@@ -106,6 +113,13 @@ def eliminate(values):
     return values
 
 def only_choice(values):
+    """
+    Look at each box and determine if a number should be assigned because it is the most logical.
+    Args:
+       values(dict): The sudoku in dictionary form
+    Returns:
+        The dictionary representation of the final sudoku grid.
+    """
     for unit in unitlist:
         for digit in '123456789':
             dplaces = [box for box in unit if digit in values[box]]
@@ -115,6 +129,13 @@ def only_choice(values):
     return values
 
 def reduce_puzzle(values):
+    """
+    Use multiple strategies to solve the Sudoku puzzle.
+    Args:
+       values(dict): The sudoku in dictionary form
+    Returns:
+        The dictionary representation of the final sudoku grid.
+    """
     stalled = False
     while not stalled:
         # Check how many boxes have a determined value
@@ -139,7 +160,13 @@ def reduce_puzzle(values):
     return values
 
 def search(values):
-    "Using depth-first search and propagation, create a search tree and solve the sudoku."
+    """
+    Using depth-first search and propagation, create a search tree and solve the sudoku.
+    Args:
+       values(dict): The sudoku in dictionary form
+    Returns:
+        The dictionary representation of the final sudoku grid.
+    """
     # First, reduce the puzzle using the previous function
     values = reduce_puzzle(values)
     
