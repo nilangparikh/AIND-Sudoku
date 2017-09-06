@@ -3,11 +3,27 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: To solve the Naked Twins problem, we use constrait propagation to repeatly find twins and determine the digit for each box until the puzzle is solved.
+
+**Naked Twins Problem:** There exists a pair of numbers that are the same in a row, column or unit. For example, F3 and I3 both have a 2 and a 3 as a possible solution. Based on Sudoku rules, a row, column or unit cannot have the same number repeated.
+![Naked Twins Image](/images/naked-twins.png)
+
+**Solution:** Find pairs that match the criteria above and attempt to solve the puzzle as much as possible. To solve the puzzle:
+1) Search the unit for the same number(s) and remove them since these numbers cannot exist in the any other box based on sudoku rules.
+![Naked Twins Remove Image](/images/naked-twins-2.png)
+
+2) Repeat until all naked twins are removed from the puzzle and the puzzle cannot solved further.
+3) Use other strategies to solve the puzzle if naked twins technique cannot solve completely.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: To solve the Diagonal Sudoku problem, we add 2 additional constraints (1 for each diagonal) and repeatly solve for each box until the puzzle is solved.
+
+**Diagonal Sudoku Problem:** In addition to standard constraits/rules, a diagonal sudoku puzzle requires that the diagonals does have the number repeated.
+![Diagonal Sudoku Image](/images/diagonal-sudoku.png)
+
+**Solution:**
+1) Add left and right diagonals to the list of constraits.
+2) Search the puzzle to find the correct number that belongs in each box using the list of contstraits.
+3) Repeat the search until the puzzle is solved.
 
 ### Install
 
